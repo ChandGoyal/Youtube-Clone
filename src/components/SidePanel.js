@@ -10,8 +10,14 @@ import {
   faTv,
   faGamepad,
 } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 const SidePanel = () => {
+  const isMenuOpen = useSelector((store) => store.app?.isMenuOpen);
+
+  // Early Return Pattern
+  if (!isMenuOpen) return null;
+
   return (
     <aside className="p-2 shadow-lg col-span-2 h-screen">
       <ul className="mb-4 text-sm">

@@ -2,12 +2,24 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { LOGO, USER_PROFILE_ICON } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <header className="grid grid-cols-12 grid-flow-col p-4 shadow-lg">
       <div className="flex col-span-1">
-        <FontAwesomeIcon icon={faBars} className="h-6 cursor-pointer" />
+        <FontAwesomeIcon
+          icon={faBars}
+          className="h-6 cursor-pointer"
+          onClick={() => toggleMenuHandler()}
+        />
         <img src={LOGO} alt="logo" className="mx-4 w-24 h-6 cursor-pointer" />
       </div>
       <div className="col-span-10 text-center">
