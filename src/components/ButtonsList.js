@@ -62,7 +62,7 @@ const ButtonsList = () => {
 
   return (
     <div
-      className="flex overflow-x-auto whitespace-nowrap"
+      className="flex overflow-x-auto whitespace-nowrap mt-4"
       onWheel={handleScroll}
       ref={scrollContainerRef}
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} // Hide scrollbar on Windows
